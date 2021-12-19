@@ -16,4 +16,40 @@ Spring container에게서 객체를 주입받아서 사용함
 * 순환 참조를 막을 수 있음
 
 
+### IOC 예시
 
+①
+
+` String url = "www.naver.com/books/it?page=105&size=20&name=spring"; //인코딩할 url`
+  
+위와 같은 URL을 Base64로 인코딩하는 작업을 수행해보자.
+
+```java
+public class Encoder {
+    //인코더 클래스 만들어 드렸습니다
+    public String encode(String message){
+        return Base64.getEncoder().encodeToString(message.getBytes());
+```
+
+일단 위와 같은 메세지를 받아서 base64로 인코딩해 반환하는 메소드를 만들었다.
+
+``` Encoder encoder = new Encoder();
+        String result = encoder.encode(url);
+        System.out.println(result);
+```
+
+돌리면 잘 나온다.
+
+
+
+아모르겠고 DI가 뭐냐 하면
+
+```JAVA
+Encoder DiEncoder = new Encoder(new Base64Encoder());
+        //Encoder DiEncoder = new Encoder(new UrlEncoder());
+        String DiResult = DiEncoder.encode(url);
+        System.out.println(DiResult);
+```
+
+서로다른 인코더를 쓰고 싶을때, 인코더 클래스 자체를 생성하는게 아니고 인코더 클래스에다가 쓸 인코더 객체를 던져줘서 쓰는 방식
+ㅇㅋ?
