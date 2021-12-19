@@ -36,7 +36,7 @@ var objectUser = objectMapper.readValue(text,mapperUser.class);
         System.out.println(objectUser);
 ```
 
-`objectMapper`객체의 readValue()메소드를 사용해, 첫번째 인자로는 **바꿀 json text 객체를**, 두번째는 바꾸려는 `클래스 타입.class`를 넣어준다.
+`objectMapper`객체의 readValue()메소드를 사용해, 첫번째 인자로는 **바꿀 json text 객체를**, 두번째는 바꾸려는 **` 클래스 타입.class `** 를 넣어준다.
 
 이대로 프로그램을 동작하면, 에러가 난다.
 
