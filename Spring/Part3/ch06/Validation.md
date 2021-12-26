@@ -80,6 +80,33 @@ bindingResult.getAllErrors().forEach(objectError -> {
 getDefaultMessage()를 통해서 미리 지정해놓은 에러 메세지를 출력할 수도 있음
 
 `@Pattern(regexp = "^\\d{2,3}-\\d{3,4}-\\d{4}$",message = "핸드폰 번호 양식과 맞지 않습니다. 01x-xxxx-xxxx")`
+
 `@Pattern` 어노테이션으로 에러 메세지 정의하기. message = 인자로 전달하면 됨
+
+ **@AssertTrue() 만들기**
+ 
+ ```java
+ @AssertTrue(message = "yyyyMM의 형식에 맞지 않습니다.")   //AssertTrue 어노테이션이 달린 메소드는 is를 앞에 달아줘야 함
+    public boolean isreqYearMonth(){
+
+        //this.reqYearMonth = getReqYearMonth() + "01";
+
+        try {
+            LocalDate localDate = LocalDate.parse(getReqYearMonth() + "01", DateTimeFormatter.ofPattern("yyyyMM"));
+        } catch (Exception e){
+            return false;
+        }
+        return true;
+    }
+```
+
+**Valid 어노테이션 직접 만들기**
+
+>난 진짜 이 날먹 자기가 안다고 무지성 만들기 인강이 맘에 안들어
+
+
+
+
+    
 
 
