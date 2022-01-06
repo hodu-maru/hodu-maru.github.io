@@ -203,6 +203,15 @@ ContentCaching을 사용할 때는 HttpServlet으로 형변환을 시킨 뒤, �
  
  * ApiController에 filter를 적용하는 방법
 
+1. Filter에다가 `@WebFilter` 어노테이션을 달고, `@Component`는 지워준다.
+
+2. 어노테이션에 `urlPatterns = `인자로 filter를 지정할 url을 지정해준다.
+
+`@WebFilter(urlPatterns = "/api/user/*") //하고자 하는 url 설정`
+
+굳~
+
+
 
  
  
