@@ -45,4 +45,11 @@ public class ApiController {
 }
 ```
 
-* `@Slf4j` : Controller에서 `System.out.println` 대신 log를 사용할 수 있게 하는 어노테이션
+* `@Slf4j` : Controller에서 `System.out.println` 대신 log를 사용할 수 있게 하는 어노테이션. lombok을 사용하면 달아주세요.
+
+`        log.info("User : {} , {}",user,user);`
+
+요렇게 사용하시면, 출력될 때 뒤 객체가 중괄호 안에 들어가는 형태로 찍히게 됩니다.
+
+
+
